@@ -1603,10 +1603,10 @@
         <section class="details-panel event-panel" aria-labelledby="eventTitle">
           <p class="panel-eyebrow">Countdown</p>
           <h2 class="sec-title" id="eventTitle">The celebration</h2>
-          <div class="cal" aria-label="Saturday, 7 November 2026">
+          <div class="cal" aria-label="Tuesday, 17 November 2026">
             <p class="cal-top">November 2026</p>
-            <p class="cal-day">7</p>
-            <p class="cal-week">Saturday</p>
+            <p class="cal-day">17</p>
+            <p class="cal-week">Tuesday</p>
             <div class="cal-sleeps" id="countdown" role="timer" :aria-label="countdownLabel">
               <template v-if="countdownMessage">
                 <p class="countdown-message">{{ countdownMessage }}</p>
@@ -1666,7 +1666,7 @@
           <p class="photos-help" v-if="photoError" role="status">{{ photoError }}</p>
         </section>
 
-        <p class="foot">Made with love for Veera Yazhmathi, 7 November 2026</p>
+        <p class="foot">Made with love for Veera Yazhmathi, 17 November 2026</p>
       </div>
     </section>
   </main>
@@ -1738,8 +1738,8 @@
         const activePhoto = computed(() => activePhotoIndex.value === null ? null : photos.value[activePhotoIndex.value]);
         const timeLeft = ref(0);
         const celebrationMessage = ref('');
-        const countdownTarget = new Date(2026, 10, 7).getTime();
-        const countdownEnd = new Date(2026, 10, 8).getTime();
+        const countdownTarget = new Date(2026, 10, 17).getTime();
+        const countdownEnd = new Date(2026, 10, 18).getTime();
         const countdownUnits = computed(() => {
           let left = timeLeft.value;
           return [['Days', 86400000], ['Hours', 3600000], ['Minutes', 60000], ['Seconds', 1000]].map(([label, size]) => {
@@ -1749,7 +1749,7 @@
           });
         });
         const countdownMessage = computed(() => timeLeft.value > 0 ? '' : celebrationMessage.value);
-        const countdownLabel = computed(() => countdownMessage.value || `${countdownUnits.value.map(unit => `${Number(unit.value)} ${unit.label.toLowerCase()}`).join(', ')} until 7 November 2026`);
+        const countdownLabel = computed(() => countdownMessage.value || `${countdownUnits.value.map(unit => `${Number(unit.value)} ${unit.label.toLowerCase()}`).join(', ')} until 17 November 2026`);
         let countdownTimer;
         let swipeStart = null;
         let returnFocus = null;
